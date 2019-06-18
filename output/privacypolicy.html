@@ -71,6 +71,84 @@
 <h3>Privacy Policy</h3>
 
 
+<h3>Information we collect</h3>
+<p>The information collected between DoT and DoH differs very slightly, so the relevant aspects are listed seperately for each below</p>
+
+<h4>DoT</h4>
+<ul>
+    <li>Your IP address</li>
+    <li>SSL/TLS version used</li>
+    <li>SSL/TLS Cipher used</li>
+</ul>
+
+
+<h4>DoH</h4>
+<ul>
+    <li>Your IP address</li>
+    <li>The version of browser/client you used</li>
+    <li>HTTP Version</li>
+    <li>Response Code</li>
+    <li>Your DNS query (if you've configured to use GET)</li>
+</ul>
+
+<h4>Both</h4>
+<p>Some additional data is recorded, but not tied back to your specific query (or IP) in any form</p>
+<ul>
+    <li>Request Timestamp</li>
+    <li>Queried names</li>
+    <li>Length of the response</li>
+    <li>Stats on how often each name is queried</li>
+    <li>Stats on number of queries handled</li>
+    <li>Stats on number of queries blocked as Ads</li>
+    <li>Generic DNS stats (query types etc)</li>
+</ul>
+
+<p>The majority of data (except for the aggregated stats) is stored in log files in order to monitor the health of the service. 
+Old log files are regularly cleaned, and so are only stored temporarily. Logs will generally be rotated out after 7 days, but may need to be kept longer if they're required in the course of an investigation.</p>
+
+
+
+<h3>Information we Share</h3>
+<h4>DoT</h4>
+<p>None</p>
+
+<h4>DoH</h4>
+<p>If your DoH queries have ECS enabled, then part of your IP address (/24 for IPv4, /56 for IPv6) will be sent to upstream DNS servers. 
+This allows Geo-Routing systems (such as those used by CDNs) to determine which servers to route you to so that you get the fastest response.</p>
+<p>Your DoH client may well have a setting to prevent this:</p>
+<div class="exampleblock">
+Doh-client:
+<pre>no_ecs = true
+</pre>
+
+Firefox:
+<pre>network.trr.disable-ECS: true
+</pre>
+</div>
+<p>If you do this, then most geo-routing systems will calculate your location based on the location of whichever of my DNS servers contacts it, which may lead to poor performance for latency-sensitive services (such as video streaming)</p>
+
+
+
+<h4>Legal Reasons</h4>
+<p>We reserve the right to share your personal information for legal reasons, including but not limited to:
+
+<ul>
+    <li>Investigating violations of the <a href="tos.html">Terms of Service</a></li>
+    <li>Protect against harm to our safety and rights, or that of others</li>
+    <li>Detect, prevent address or otherwise investigate fraud, security or technical issues</li>
+    <li>Meet any valid applicable law, regulation, legal process or enforceable governmental request</li>
+</ul>
+</p>
+<p>We obviously cannot share any information that we do not have (because we don't collect it, or because it's already been erased)</p>
+
+
+<h4>Termination</h4>
+<p>You may choose to terminate your use of the service at any point by changing the DNS servers you have configured on your client. If you wish to write to request deletion of your data, please write to the <a href="abuse.html">Abuse Contact</a>. 
+However, deletion will be on a best-effort basis as the majority of data is recorded anonymously, so it will not be possible for us to locate all data related to you.</p>
+
+
+<h4>Changes</h4>
+<p>This Privacy Policy may be modified at any point without notice. By continuing to use the service you agree to be bound by it.</p>
 <p>A history of changes to these terms can be found in the <a href="https://github.com/bentasker/dns.bentasker.co.uk/commits/master/privacypolicy.html">commit log for this page</a></p>
 
 
