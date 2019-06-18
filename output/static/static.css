@@ -41,10 +41,23 @@
   pre {color: #0c9; }
   blockquote {color: #0c9; }
 
+div.exampleblock {
+    padding: 5px;
+    background: #333335;
+    border-radius: 5px;
+    border: solid #6f6c6c 1px;
+    max-width: 40%;
+}  
+  
+  
 #smicons img {
     max-height: 25px;
     float: right;
     padding: 10px;
+}
+
+#smicons {
+    margin-bottom: 20px;
 }
 
 .clr {
@@ -56,6 +69,20 @@
 }
 
 
+#fe:after { content: "@"} 
+#cu:after { content: "s.be"} 
+span.au:after { content: "r.co.uk"} 
+span.ts {display:none}
+
+
+#dotaddress, #dohaddress, #iprecs, #ctct {
+    color: #FFF;
+    padding-left: 40px;
+}
+
+.featuresblock {
+    color: #d4d4d4b8;
+}
 
 /* Landscape Tablet */
 @media (max-width: 1100px) {

@@ -1,7 +1,7 @@
 <html>
 <head id="dochead">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Welcome 
+	<title>Setup 
 		- dns.bentasker.co.uk</title>
 	<meta name="language" content="en" />
 	<meta name="content-type" content="text/html;charset=utf-8" />
@@ -45,7 +45,7 @@
     <a class='nav' href="index.html">Home</a>
     <a class='nav' href="setup.html">Setup</a>
     <a class='nav' href="privacypolicy.html">Privacy</a>
-        <a class='nav' href="tos.html">Terms of Service</a>
+    <a class='nav' href="tos.html">Terms of Service</a>
     <a class='nav' href="abuse.html">Abuse</a>
 </div>
 
@@ -66,15 +66,76 @@
 </div>
 
 
-<div id="pageContent" itemprop="mainContentOfPage" class="indexpage">
-	<p>Welcome to dns.bentasker.co.uk</p>
-	<p>A small ad and phishing blocking DNS privacy resolver supporting D-o-H and D-o-T</p>
+<div id="pageContent" itemprop="mainContentOfPage" class="setuppage">
+	<h2>Getting Started</h2>
 	
-	<p>My DNS service uses various well known ad-blocking lists in order to block ads, along with <a href="https://projects.bentasker.co.uk/jira_projects/browse/ADBLK.html" target=_blank>ablocking lists of my own</a>,
-	along with the Phishing Army anti-Phishing lists.</p>
+	<p>The first port of call for any privacy sensitive user should be our <a href="privacypolicy.html">Privacy Policy</a>.</p>
 	
-	<p>This service is, at best, a small hobby project to ensure that there are still some privacy-sensitive DNS services out there. See my <a href="privacypolicy.html">Privacy Policy</a> and <a href="abuse.html">Abuse</a> page for details
-	of what limited data is recorded, and when it might be passed onto third parties.</p>
+	<a name="DoT"></a>
+	<h3>DNS-over-TCP</h3>
+	
+	<p>For best results, you should configure your DNS-over-TLS (DoT) client to use</p>
+	<div id="dotaddress">dns.bentasker.co.uk, TCP port 853</div>
+	<p>for resolution</p>
+	<p>However, if you don't want to allow your resolver to do a lookup first, you can configure the following IPs, and instruct your resolver to verify that a valid cert is provided with the tls_auth_name dns.bentasker.co.uk.</p>
+	<div id="iprecs">
+            <ul>
+                <li>IP: <span id="recommendedip">51.255.232.237</span> and <span id="hardcodedip">206.189.120.26</span></li>
+                <li>tls_auth_name: dns.bentasker.co.uk</li>
+                <li>Port: 853</li>
+            </ul>
+	</div>
+	
+	<script type="text/javascript">fetchPage('https://dns.bentasker.co.uk/recommend-ip',updateRecommendedIP,function(){})</script>
+	
+
+	<h4>Notes</h4>
+	<div class="featuresblock">	
+            <ul>
+                <li>DNSSEC enabled</li>
+                <li>No ECS</li>
+            </ul>
+	</div>
+	
+	<p>
+	<div class="exampleblock">
+	<b>Unbound Example</b>
+<pre><code class="unbound">forward-zone:
+        name: "."
+        forward-tls-upstream: yes
+        forward-addr: <span id="recommendedip2">51.255.232.237</span>@853#dns.bentasker.co.uk
+        forward-addr: 206.189.120.26@853#dns.bentasker.co.uk</code></pre>
+	</p>
+	
+	
+	<p>For more information, see <a href="https://www.bentasker.co.uk/documentation/linux/470-building-a-dns-over-tls-server#unboundupstreamDoT">how to configure unbound for upstream DoT</a></p>
+	</div>
+	
+	
+	<a name="DoH"></a>
+	<h3>DNS-over-HTTPS</h3>
+	
+	<p>Configure your DNS-over-HTTPS client to place queries via</p>
+	<div id="dohaddress">https://dns.bentasker.co.uk/dns-query</div>
+        <p>By default, ECS information will be included in upstream queries. If you do not want this, you should ensure your DoH client is set to request that ECS is not used.</p>
+        
+        
+        <h4>Notes</h4>
+	<div class="featuresblock">	
+            <ul>
+                <li>DNSSEC enabled</li>
+                <li>ECS</li>
+                <li>Rate limited: 100 queries/sec</li>
+            </ul>
+	</div>        
+        
+        <p>
+        	<div class="exampleblock">
+        <b>Firefox Example (about:config)</b>
+    <pre>network.trr.uri: https://dns.bentasker.co.uk/dns-query
+network.trr.disable-ECS: false
+network.trr.mode: 2</pre>	
+	</div>
 	
 </div>
 
