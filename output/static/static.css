@@ -65,6 +65,9 @@ div.exampleblock {
     border-radius: 5px;
 }
 
+.serviceInUse {
+   border: 1px solid #0c0;
+}
 
 .serviceNotInUse {
    color: red;

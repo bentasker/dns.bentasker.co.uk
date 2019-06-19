@@ -43,9 +43,6 @@ function fetchPage(url,callback,errcallback){
 
 // Load content from a domain that only resolves via my service
 function checkifserviceinuse(){
-	// Disabled for now as it won't work until I get a cert for that domain
-	// Can't do that with LetsEncrypt as the name (by design) only resolves via my servers
-	return;
 	i = document.createElement('img');
 	i.addEventListener('error',testimgnoload);
         i.addEventListener('load',testimgloaded);
