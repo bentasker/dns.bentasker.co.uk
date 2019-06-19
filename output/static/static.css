@@ -52,6 +52,15 @@ div.exampleblock {
 .phoneonly {
     display: none;
 }  
+
+th {
+    text-align: left;
+    padding-left: 10px;
+}
+
+td {
+    padding-left: 10px;
+}
   
 #smicons img {
     max-height: 25px;
