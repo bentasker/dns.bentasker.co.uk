@@ -56,6 +56,22 @@ div.exampleblock {
     padding: 10px;
 }
 
+
+.serviceNotInUse, .serviceInUse {
+    max-width: 20%;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+.serviceNotInUse {
+   color: red;
+   border: 1px solid red;
+}
+
+
 #smicons {
     margin-bottom: 20px;
 }
