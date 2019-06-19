@@ -48,7 +48,10 @@ div.exampleblock {
     border: solid #6f6c6c 1px;
     max-width: 40%;
 }  
-  
+
+.phoneonly {
+    display: none;
+}  
   
 #smicons img {
     max-height: 25px;
