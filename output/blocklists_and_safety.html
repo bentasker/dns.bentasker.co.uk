@@ -1,7 +1,7 @@
 <html>
 <head id="dochead">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Welcome 
+	<title>Blocklists and Safety
 		- dns.bentasker.co.uk</title>
 	<meta name="language" content="en" />
 	<meta name="content-type" content="text/html;charset=utf-8" />
@@ -55,30 +55,123 @@
 <div id="serviceinuse"></div>
 
 
-	<p>Welcome to dns.bentasker.co.uk</p>
-	<p>A small ad and phishing blocking DNS privacy resolver supporting D-o-H and D-o-T</p>
-	
-	<p>My DNS service uses various well known ad-blocking lists in order to block ads, along with <a href="https://projects.bentasker.co.uk/jira_projects/browse/ADBLK.html" target=_blank>ablocking lists of my own</a>,
-	along with the Phishing Army anti-Phishing lists. See <a href="blocklists_and_safety.html">Blocklists and Safety</a> for more information.</p>
-	
-	<p>This service is, at best, a small hobby project to ensure that there are still some privacy-sensitive DNS services out there. See my <a href="privacypolicy.html">Privacy Policy</a> and <a href="abuse.html">Abuse</a> page for details
-	of what limited data is recorded, and when it might be passed onto third parties.</p>
-	
-	<p>This service has resolvers in locations across the globe.</p>
 
-	<p>See <a href="setup.html">Setup</a> for details on the configuration required to use my DNS Privacy service</p>
+<h3>Safety</h3>
 
-
-	<h3>Features Overview</h3>
+<p>The primary aim of the service is to provide a means for users to resolve names without being subjected 
+to <a href="https://projects.bentasker.co.uk/jira_projects/browse/MISC-11.html" target=_blank>Government mandated snooping</a>
+or <a href="https://en.wikipedia.org/wiki/DNS_hijacking#Manipulation_by_ISPs" target=_blank>ISP orchestrated DNS Hijacking</a> and interference.</p>
+<p>This service allows you to send your queries encrypted so that your ISP can neither record your question, nor record (or change) the answer.</p>
+<p>However, providing privacy often comes at a cost - an increased chance of attempts at misuse, whether by users or those trying to affect the answers that legitimate users receive</p>
+<p>This service therefore implements some restrictions, and uses some techniques in order to protect both itself and you</p>
 
 	<ul>
-		<li>Minimal Logging</li>
+                <li>DoT/DoH mandated</li>
+		<li>Rate limits for all clients</li>
 		<li>DNSSEC</li>
-		<li>ECS</li>
 		<li>Upstream name minimisation</li>
-		<li>DoT/DoH</li>
+		<li>RFC8020 NXDOMAIN subtree inheritance</li>
+		<li>Upstream poisoning protection</li>
+		<li>Upstream query rate limiting</li>
 	</ul>
-	<p> </p>
+
+	
+	
+<p>Additional mechanisms and restrictions may be implemented at any time without notice.</p>
+<p> </p>
+<hr />
+<a name="bloclists"></a><h3>Block lists</h3>
+<p>At time of launch, the following block list were being ingested, processed and used</p>
+
+<table>
+<thead>
+<tr>
+    <th>Provider</th>
+    <th>Type</th>
+    <th>Feed Link</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+    <td><a href="https://github.com/StevenBlack/hosts/blob/master/readme.md" target_blank>Steven Black</a></td>
+    <td>Adware and Malware</td>
+    <td><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" target_blank>link</a></td>
+</tr>
+
+<tr>
+    <td><a href="https://mirror1.malwaredomains.com/" target_blank>Malware Domains</a></td>
+    <td>Malware</td>
+    <td><a href="https://mirror1.malwaredomains.com/files/justdomains" target_blank>link</a></td>
+</tr>
+
+<tr>
+    <td><a href="http://sysctl.org/cameleon/" target_blank>Cameleon</a></td>
+    <td>Ads</td>
+    <td><a href="http://sysctl.org/cameleon/hosts" target_blank>link</a></td>
+</tr>
+
+<tr>
+    <td><a href="https://zeustracker.abuse.ch/" target_blank>Zeus Tracker</a></td>
+    <td>Malware</td>
+    <td><a href="https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist" target_blank>link</a></td>
+</tr>
+
+<tr>
+    <td><a href="https://disconnect.me/" target_blank>Disconnect.me</a></td>
+    <td>Trackers</td>
+    <td><a href="https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt" target_blank>link</a></td>
+</tr>
+
+<tr>
+    <td><a href="https://disconnect.me/" target_blank>Disconnect.me</a></td>
+    <td>Ads</td>
+    <td><a href="https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt" target_blank>link</a></td>
+</tr>
+
+
+<tr>
+    <td><a href="https://hosts-file.net/" target_blank>Hosts-file</a></td>
+    <td>Ads</td>
+    <td><a href="https://hosts-file.net/ad_servers.txt" target_blank>link</a></td>
+</tr>
+
+<tr>
+    <td><a href="https://projects.bentasker.co.uk/jira_projects/browse/ADBLK.html" target_blank>My Adblock Lists</a> Domain List</td>
+    <td>Ads and Trackers</td>
+    <td><a href="https://www.bentasker.co.uk/adblock/blockeddomains.txt" target_blank>link</a></td>
+</tr>
+
+
+<tr>
+    <td><a href="https://projects.bentasker.co.uk/jira_projects/browse/ADBLK.html" target_blank>My Adblock Lists</a> Zone List</td>
+    <td>Ads and Trackers</td>
+    <td><a href="https://www.bentasker.co.uk/adblock/zoneblocks.unbound.txt" target_blank>link</a></td>
+</tr>
+
+<tr>
+    <td><a href="https://phishing.army/" target_blank>Phishing Army</a></td>
+    <td>Phishing</td>
+    <td><a href="https://phishing.army/download/phishing_army_blocklist_extended.txt" target_blank>link</a></td>
+</tr>
+
+<tr>
+    <td><a href="https://github.com/marktron/fakenews" target_blank>Mark Tron</a></td>
+    <td>Fake News</td>
+    <td><a href="https://raw.githubusercontent.com/marktron/fakenews/master/fakenews" target_blank>link</a></td>
+</tr>
+
+<tr>
+    <td><a href="https://github.com/Sinfonietta/hostfiles" target_blank>Sinfonietta</a></td>
+    <td>Shock/Snuff</td>
+    <td><a href="https://raw.githubusercontent.com/Sinfonietta/hostfiles/master/snuff-hosts" target_blank>link</a></td>
+</tr>
+</tbody>
+
+</table>
+
+<p>Although the inclusion of Fake News and Snuff in the lists may seem controversial to some, at time of addition the fakenews list only contained sites which were - verifiably - circulating "news" which was untrue. The "snuff" list consists of just 18 domains.</p>
+
 
 
 	
