@@ -6,6 +6,9 @@ function updateRecommendedIP(json){
         if (h != j[0]){
             document.getElementById('recommendedip').innerHTML = j[0];
             document.getElementById('recommendedip2').innerHTML = j[0];
+            
+            document.getElementById('recommendedipsuffix').innerHTML = " (based upon your current location)";
+            
         }
     }
 }
