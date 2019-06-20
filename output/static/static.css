@@ -100,13 +100,19 @@ td {
 }
 
 
-#fe:after { content: "@"} 
+#fe:after, #vf:after { content: "@"} 
 #cu:after { content: "s.be"} 
 span.au:after { content: "r.co.uk"} 
-span.ts {display:none}
+span.ts, span.tg {display:none}
+span.ds:after {content: "ns."}
+
+#gh:after {
+    content: 'por'
+}
 
 
-#dotaddress, #dohaddress, #iprecs, #ctct {
+
+#dotaddress, #dohaddress, #iprecs, #ctct, #ctct2 {
     color: #FFF;
     padding-left: 40px;
 }
