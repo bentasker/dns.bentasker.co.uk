@@ -1,3 +1,6 @@
 User-agent: *
 Disallow: /dns-query
 
+# Sitemap
+Sitemap: https://dns.bentasker.co.uk/sitemap.xml
+

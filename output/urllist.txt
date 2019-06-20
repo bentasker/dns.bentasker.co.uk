@@ -1,3 +1,4 @@
+https://dns.bentasker.co.uk/
 https://dns.bentasker.co.uk/abuse.html
 https://dns.bentasker.co.uk/blocklists_and_safety.html
 https://dns.bentasker.co.uk/index.html
