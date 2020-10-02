@@ -110,8 +110,14 @@ Old log files are regularly cleaned, and so are only stored temporarily. Logs wi
 
 <a name="share"></a>
 <h3>DNS: Information we Share</h3>
-<h4>DoT</h4>
+<h4>DoT (no ECS)</h4>
 <p>None</p>
+<p> </p>
+
+<h4>DoT (with ECS)</h4>
+<p>Part of your IP address (/24 for IPv4, /56 for IPv6) will be sent to upstream DNS servers in order to aid geo-routing (allowing CDNs to returns Pops close to you rather than those close to our DNS servers).</p>
+<p> </p>
+
 
 <h4>DoH</h4>
 <p>If your DoH queries have ECS enabled, then part of your IP address (/24 for IPv4, /56 for IPv6) will be sent to upstream DNS servers. 
@@ -127,7 +133,7 @@ Firefox:
 </pre>
 </div>
 <p>If you do this, then most geo-routing systems will calculate your location based on the location of whichever of my DNS servers contacts it, which may lead to poor performance for latency-sensitive services (such as video streaming)</p>
-
+<p> </p>
 
 
 <h4>Legal Reasons</h4>
