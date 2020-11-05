@@ -14,7 +14,7 @@ About
 
 dns.bentasker.co.uk is a small DNS privacy service providing DNS-over-TLS (DoT) and DNS-over-HTTPS (DoH) resolvers for general use.
 
-Configuration details can be found on the [Setup Page](https://dns.bentasker.co.uk/setup.html)
+Configuration details can be found on the [Setup Page](https://dns.bentasker.co.uk/setup.html).
 
 
 Abuse
